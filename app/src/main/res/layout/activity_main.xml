@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="#e71d2c"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_menu" />
+
+    <TextView
+        android:id="@+id/tv_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="SETTINGS"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+        android:textColor="?colorPrimaryVariant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/general_settings_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/printer_settings_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_settings"
+        app:layout_constraintVertical_bias="0.15">
+
+        <ImageView
+            android:id="@+id/iv_general_settings"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/general_settings" />
+
+        <TextView
+            android:id="@+id/tv_general_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="GENERAL\nSETTINGS"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:textColor="#454545"
+            app:layout_constraintStart_toEndOf="@id/iv_general_settings"
+            app:layout_constraintTop_toTopOf="@id/iv_general_settings" />
+
+        <TextView
+            android:id="@+id/tv_general_settings_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/source_sans"
+            android:text="Details, Settings"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="#454545"
+            app:layout_constraintStart_toStartOf="@id/tv_general_settings"
+            app:layout_constraintTop_toBottomOf="@id/tv_general_settings" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/printer_settings_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/order_timing_container"
+        app:layout_constraintStart_toEndOf="@id/general_settings_container"
+        app:layout_constraintTop_toBottomOf="@id/tv_settings"
+        app:layout_constraintVertical_bias="0.15">
+
+        <ImageView
+            android:id="@+id/iv_printer_settings"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/printer_settings" />
+
+        <TextView
+            android:id="@+id/tv_printer_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="PRINTER\nSETTINGS"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:textColor="#454545"
+            app:layout_constraintStart_toEndOf="@id/iv_printer_settings"
+            app:layout_constraintTop_toTopOf="@id/iv_printer_settings" />
+
+        <TextView
+            android:id="@+id/tv_printer_settings_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/source_sans"
+            android:text="Bluetooth,\nPrinter Settings"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="#454545"
+            app:layout_constraintStart_toStartOf="@id/tv_printer_settings"
+            app:layout_constraintTop_toBottomOf="@id/tv_printer_settings" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/order_timing_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/printer_settings_container"
+        app:layout_constraintTop_toBottomOf="@id/tv_settings"
+        app:layout_constraintVertical_bias="0.15">
+
+        <ImageView
+            android:id="@+id/iv_order_timing"
+            android:layout_width="77dp"
+            android:layout_height="77dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/order_timing" />
+
+        <TextView
+            android:id="@+id/tv_order_timing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="ORDER\nTIMING"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:textColor="#454545"
+            app:layout_constraintStart_toEndOf="@id/iv_order_timing"
+            app:layout_constraintTop_toTopOf="@id/iv_order_timing" />
+
+        <TextView
+            android:id="@+id/tv_order_timing_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/source_sans"
+            android:text="Set timing for\ndelivery/collection"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="#454545"
+            app:layout_constraintStart_toStartOf="@id/tv_order_timing"
+            app:layout_constraintTop_toBottomOf="@id/tv_order_timing" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="general_settings_container,order_timing_container,printer_settings_container" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/receipt_settings_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/general_settings_container"
+        app:layout_constraintTop_toBottomOf="@id/barrier"
+        app:layout_constraintVertical_bias="0.2">
+
+        <ImageView
+            android:id="@+id/iv_receipt_settings"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/receipt_settings" />
+
+        <TextView
+            android:id="@+id/tv_receipt_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="RECEIPT\nSETTINGS"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:textColor="#454545"
+            app:layout_constraintStart_toEndOf="@id/iv_receipt_settings"
+            app:layout_constraintTop_toTopOf="@id/iv_receipt_settings" />
+
+        <TextView
+            android:id="@+id/tv_receipt_settings_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/source_sans"
+            android:text="Choose a layout\nthat suits you"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="#454545"
+            app:layout_constraintStart_toStartOf="@id/tv_receipt_settings"
+            app:layout_constraintTop_toBottomOf="@id/tv_receipt_settings" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/store_timing_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/printer_settings_container"
+        app:layout_constraintTop_toBottomOf="@id/barrier"
+        app:layout_constraintVertical_bias="0.2">
+
+        <ImageView
+            android:id="@+id/iv_store_timing"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/store_times" />
+
+        <TextView
+            android:id="@+id/tv_store_timing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="STORE OPEN &amp;\nCLOSE TIMES"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:textColor="#454545"
+            app:layout_constraintStart_toEndOf="@id/iv_store_timing"
+            app:layout_constraintTop_toTopOf="@id/iv_store_timing" />
+
+        <TextView
+            android:id="@+id/tv_store_timing_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/source_sans"
+            android:text="Update store\nopening timing."
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="#454545"
+            app:layout_constraintStart_toStartOf="@id/tv_store_timing"
+            app:layout_constraintTop_toBottomOf="@id/tv_store_timing" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/super_admin_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/order_timing_container"
+        app:layout_constraintTop_toBottomOf="@id/barrier"
+        app:layout_constraintVertical_bias="0.2">
+
+        <ImageView
+            android:id="@+id/iv_super_admin"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/super_admin" />
+
+        <TextView
+            android:id="@+id/tv_super_admin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="SUPER\nADMIN"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:textColor="#bebebe"
+            app:layout_constraintStart_toEndOf="@id/iv_super_admin"
+            app:layout_constraintTop_toTopOf="@id/iv_super_admin" />
+
+        <TextView
+            android:id="@+id/tv_super_admin_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/source_sans"
+            android:text="For Ordering Direct\nUse Only"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="#bebebe"
+            app:layout_constraintStart_toStartOf="@id/tv_super_admin"
+            app:layout_constraintTop_toBottomOf="@id/tv_super_admin" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

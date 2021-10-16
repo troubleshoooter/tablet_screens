@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Screens">
         <activity
+            android:name=".StoreTiming"
+            android:exported="false" />
+        <activity
             android:name=".PrinterSettings"
             android:exported="false" />
         <activity

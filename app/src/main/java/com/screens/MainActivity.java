@@ -17,9 +17,11 @@ public class MainActivity extends AppCompatActivity {
         View printerSettings = findViewById(R.id.printer_settings_container);
         View storeTiming = findViewById(R.id.store_timing_container);
         View orderTiming = findViewById(R.id.order_timing_container);
+        View receiptSettings = findViewById(R.id.receipt_settings_container);
         generalSettings.setOnClickListener(v -> startActivity(new Intent(this, GeneralSettings.class)));
         printerSettings.setOnClickListener(v -> startActivity(new Intent(this, PrinterSettings.class)));
         storeTiming.setOnClickListener(v -> startActivity(new Intent(this, StoreTiming.class)));
         orderTiming.setOnClickListener(v -> startActivity(new Intent(this, OrderTiming.class)));
+        receiptSettings.setOnClickListener(v -> startActivity(new Intent(this, ReceiptSettings.class)));
     }
 }

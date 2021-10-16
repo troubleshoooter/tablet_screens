@@ -5,13 +5,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-public class StoreTiming extends AppCompatActivity {
+public class OrderTiming extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_store_timing);
-        RecyclerView rvStoreTiming = findViewById(R.id.rv_store_timing);
-        rvStoreTiming.setAdapter(new StoreTimingAdapter());
+        setContentView(R.layout.activity_order_timing);
+        RecyclerView rvOrderTiming = findViewById(R.id.rv_order_timing);
+        rvOrderTiming.setAdapter(new OrderTimingAdapter());
     }
 }

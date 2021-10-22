@@ -14,121 +14,137 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/ic_menu" />
 
-    <TextView
-        android:id="@+id/tv_general_settings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="GENERAL SETTINGS"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
-        android:textColor="?colorPrimaryVariant"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/il_restaurant_name"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="8dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toStartOf="@id/il_telephone"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_general_settings"
-        app:layout_constraintWidth_percent="0.25">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_regular"
-            android:text="Restaurant Name" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/il_telephone"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="8dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/il_restaurant_name"
-        app:layout_constraintTop_toBottomOf="@id/tv_general_settings"
-        app:layout_constraintWidth_percent="0.25">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_regular"
-            android:inputType="phone"
-            android:text="Telephone" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <View
-        android:id="@+id/divider"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:layout_marginHorizontal="40dp"
-        android:layout_marginTop="32dp"
-        android:background="@color/black"
+        android:layout_height="0dp"
+        android:fillViewport="true"
         app:layout_constraintBottom_toTopOf="@id/footer"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.4" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
-    <TextView
-        android:id="@+id/tv_create_passcode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="28dp"
-        android:fontFamily="@font/poppins_regular"
-        android:text="Create Passcode"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tv_password_notice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:alpha="0.7"
-        android:fontFamily="@font/source_sans"
-        android:text="Passcodes to be used by Authorised Personnel Only\nPlease do not access this if you do not meet criteria"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_create_passcode" />
+            <TextView
+                android:id="@+id/tv_general_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="GENERAL SETTINGS"
+                android:textColor="?colorPrimaryVariant"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/make_a_passcode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/poppins_bold"
-        android:letterSpacing="0"
-        android:paddingHorizontal="40dp"
-        android:paddingVertical="8dp"
-        android:text="MAKE A PASSCODE"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-        android:textColor="@color/black"
-        app:backgroundTint="#e2bb04"
-        app:cornerRadius="8dp"
-        app:layout_constraintStart_toStartOf="@id/tv_password_notice"
-        app:layout_constraintTop_toBottomOf="@id/tv_password_notice" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/il_restaurant_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layout_constraintEnd_toStartOf="@id/il_telephone"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_general_settings"
+                app:layout_constraintWidth_percent="0.25">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Restaurant Name" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/il_telephone"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/il_restaurant_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_general_settings"
+                app:layout_constraintWidth_percent="0.25">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:inputType="phone"
+                    android:text="Telephone" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="32dp"
+                android:background="@color/black"
+                app:layout_constraintBottom_toTopOf="@id/footer"
+                app:layout_constraintTop_toBottomOf="@id/il_telephone"
+                app:layout_constraintVertical_bias="0" />
+
+            <TextView
+                android:id="@+id/tv_create_passcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Create Passcode"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider" />
+
+            <TextView
+                android:id="@+id/tv_password_notice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:alpha="0.7"
+                android:fontFamily="@font/source_sans"
+                android:text="Passcodes to be used by Authorised Personnel Only\nPlease do not access this if you do not meet criteria"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_7ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_create_passcode" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/make_a_passcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:letterSpacing="0"
+                android:paddingHorizontal="40dp"
+                android:paddingVertical="8dp"
+                android:text="MAKE A PASSCODE"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8ssp"
+                app:backgroundTint="#e2bb04"
+                app:cornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_password_notice"
+                app:layout_constraintTop_toBottomOf="@id/tv_password_notice"
+                app:layout_constraintVertical_bias="0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/footer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#dddddd"
-        android:padding="16dp"
+        android:padding="@dimen/_6sdp"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
@@ -142,8 +158,8 @@
             android:paddingHorizontal="16dp"
             android:paddingTop="4dp"
             android:text="Your Changes have been successfully saved"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
             android:textColor="#4e4e4e"
+            android:textSize="@dimen/_7ssp"
             android:textStyle="bold"
             app:drawableStartCompat="@drawable/ic_round_check_24"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -155,10 +171,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
+            android:letterSpacing="0"
             android:text="Apply"
             app:backgroundTint="#00C853"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

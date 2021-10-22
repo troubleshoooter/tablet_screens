@@ -18,10 +18,10 @@
         android:id="@+id/tv_settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="@dimen/_12sdp"
         android:fontFamily="@font/poppins_bold"
         android:text="SETTINGS"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+        android:textSize="@dimen/_11ssp"
         android:textColor="?colorPrimaryVariant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,8 +39,8 @@
 
         <ImageView
             android:id="@+id/iv_general_settings"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/general_settings" />
@@ -52,8 +52,8 @@
             android:layout_marginStart="16dp"
             android:fontFamily="@font/poppins_bold"
             android:text="GENERAL\nSETTINGS"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
             android:textColor="#454545"
+            android:textSize="@dimen/_8ssp"
             app:layout_constraintStart_toEndOf="@id/iv_general_settings"
             app:layout_constraintTop_toTopOf="@id/iv_general_settings" />
 
@@ -63,8 +63,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/source_sans"
             android:text="Details, Settings"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             android:textColor="#454545"
+            android:textSize="@dimen/_7ssp"
             app:layout_constraintStart_toStartOf="@id/tv_general_settings"
             app:layout_constraintTop_toBottomOf="@id/tv_general_settings" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -81,8 +81,8 @@
 
         <ImageView
             android:id="@+id/iv_printer_settings"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/printer_settings" />
@@ -94,8 +94,8 @@
             android:layout_marginStart="16dp"
             android:fontFamily="@font/poppins_bold"
             android:text="PRINTER\nSETTINGS"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
             android:textColor="#454545"
+            android:textSize="@dimen/_8ssp"
             app:layout_constraintStart_toEndOf="@id/iv_printer_settings"
             app:layout_constraintTop_toTopOf="@id/iv_printer_settings" />
 
@@ -105,8 +105,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/source_sans"
             android:text="Bluetooth,\nPrinter Settings"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             android:textColor="#454545"
+            android:textSize="@dimen/_7ssp"
             app:layout_constraintStart_toStartOf="@id/tv_printer_settings"
             app:layout_constraintTop_toBottomOf="@id/tv_printer_settings" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -123,8 +123,8 @@
 
         <ImageView
             android:id="@+id/iv_order_timing"
-            android:layout_width="77dp"
-            android:layout_height="77dp"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/order_timing" />
@@ -136,8 +136,8 @@
             android:layout_marginStart="16dp"
             android:fontFamily="@font/poppins_bold"
             android:text="ORDER\nTIMING"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
             android:textColor="#454545"
+            android:textSize="@dimen/_8ssp"
             app:layout_constraintStart_toEndOf="@id/iv_order_timing"
             app:layout_constraintTop_toTopOf="@id/iv_order_timing" />
 
@@ -147,8 +147,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/source_sans"
             android:text="Set timing for\ndelivery/collection"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             android:textColor="#454545"
+            android:textSize="@dimen/_7ssp"
             app:layout_constraintStart_toStartOf="@id/tv_order_timing"
             app:layout_constraintTop_toBottomOf="@id/tv_order_timing" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -171,8 +171,8 @@
 
         <ImageView
             android:id="@+id/iv_receipt_settings"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/receipt_settings" />
@@ -184,8 +184,8 @@
             android:layout_marginStart="16dp"
             android:fontFamily="@font/poppins_bold"
             android:text="RECEIPT\nSETTINGS"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
             android:textColor="#454545"
+            android:textSize="@dimen/_8ssp"
             app:layout_constraintStart_toEndOf="@id/iv_receipt_settings"
             app:layout_constraintTop_toTopOf="@id/iv_receipt_settings" />
 
@@ -195,8 +195,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/source_sans"
             android:text="Choose a layout\nthat suits you"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             android:textColor="#454545"
+            android:textSize="@dimen/_7ssp"
             app:layout_constraintStart_toStartOf="@id/tv_receipt_settings"
             app:layout_constraintTop_toBottomOf="@id/tv_receipt_settings" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -212,8 +212,8 @@
 
         <ImageView
             android:id="@+id/iv_store_timing"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/store_times" />
@@ -225,8 +225,8 @@
             android:layout_marginStart="16dp"
             android:fontFamily="@font/poppins_bold"
             android:text="STORE OPEN &amp;\nCLOSE TIMES"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
             android:textColor="#454545"
+            android:textSize="@dimen/_8ssp"
             app:layout_constraintStart_toEndOf="@id/iv_store_timing"
             app:layout_constraintTop_toTopOf="@id/iv_store_timing" />
 
@@ -236,8 +236,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/source_sans"
             android:text="Update store\nopening timing."
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             android:textColor="#454545"
+            android:textSize="@dimen/_7ssp"
             app:layout_constraintStart_toStartOf="@id/tv_store_timing"
             app:layout_constraintTop_toBottomOf="@id/tv_store_timing" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -253,8 +253,8 @@
 
         <ImageView
             android:id="@+id/iv_super_admin"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
             android:layout_marginEnd="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -267,8 +267,8 @@
             android:layout_marginStart="16dp"
             android:fontFamily="@font/poppins_bold"
             android:text="SUPER\nADMIN"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
             android:textColor="#bebebe"
+            android:textSize="@dimen/_8ssp"
             app:layout_constraintStart_toEndOf="@id/iv_super_admin"
             app:layout_constraintTop_toTopOf="@id/iv_super_admin" />
 
@@ -278,8 +278,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/source_sans"
             android:text="For Ordering Direct\nUse Only"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             android:textColor="#bebebe"
+            android:textSize="@dimen/_7ssp"
             app:layout_constraintStart_toStartOf="@id/tv_super_admin"
             app:layout_constraintTop_toBottomOf="@id/tv_super_admin" />
     </androidx.constraintlayout.widget.ConstraintLayout>

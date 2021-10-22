@@ -14,82 +14,95 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/ic_menu" />
 
-    <TextView
-        android:id="@+id/tv_order_timing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Order Timing"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
-        android:textColor="?colorPrimaryVariant"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
-
-
-    <LinearLayout
-        android:id="@+id/header_container"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="40dp"
-        android:layout_marginTop="40dp"
-        android:weightSum="3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_order_timing"
-        app:layout_constraintWidth_percent="0.5">
-
-        <TextView
-            android:id="@+id/tv_days"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/poppins_bold"
-            android:text="Days"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-            android:textColor="?colorPrimaryVariant" />
-
-        <TextView
-            android:id="@+id/tv_delivery"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/poppins_bold"
-            android:text="Delivery"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-            android:textColor="?colorPrimaryVariant" />
-
-        <TextView
-            android:id="@+id/tv_collection"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/poppins_bold"
-            android:text="Collection"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-            android:textColor="?colorPrimaryVariant" />
-    </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_order_timing"
-        android:layout_width="0dp"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="24dp"
-        android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:fillViewport="true"
         app:layout_constraintBottom_toTopOf="@id/footer"
-        app:layout_constraintEnd_toEndOf="@id/header_container"
-        app:layout_constraintStart_toStartOf="@id/header_container"
-        app:layout_constraintTop_toBottomOf="@id/header_container"
-        tools:listitem="@layout/list_item_order_time" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_order_timing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Order Timing"
+                android:textColor="?colorPrimaryVariant"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <LinearLayout
+                android:id="@+id/header_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:weightSum="3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_order_timing"
+                app:layout_constraintWidth_percent="0.7">
+
+                <TextView
+                    android:id="@+id/tv_days"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Days"
+                    android:textColor="?colorPrimaryVariant"
+                    android:textSize="@dimen/_10ssp" />
+
+                <TextView
+                    android:id="@+id/tv_delivery"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Delivery"
+                    android:textColor="?colorPrimaryVariant"
+                    android:textSize="@dimen/_10ssp" />
+
+                <TextView
+                    android:id="@+id/tv_collection"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Collection"
+                    android:textColor="?colorPrimaryVariant"
+                    android:textSize="@dimen/_10ssp" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_order_timing"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="@id/header_container"
+                app:layout_constraintStart_toStartOf="@id/header_container"
+                app:layout_constraintTop_toBottomOf="@id/header_container"
+                tools:listitem="@layout/list_item_order_time" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/footer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#dddddd"
-        android:padding="16dp"
+        android:padding="@dimen/_6sdp"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
@@ -103,8 +116,8 @@
             android:paddingHorizontal="16dp"
             android:paddingTop="4dp"
             android:text="Your Changes have been successfully saved"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
             android:textColor="#4e4e4e"
+            android:textSize="@dimen/_7ssp"
             android:textStyle="bold"
             app:drawableStartCompat="@drawable/ic_round_check_24"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -116,10 +129,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
+            android:letterSpacing="0"
             android:text="Apply"
             app:backgroundTint="#00C853"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

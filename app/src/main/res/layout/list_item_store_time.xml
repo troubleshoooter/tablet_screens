@@ -4,28 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
     android:gravity="center"
+    android:orientation="horizontal"
     android:weightSum="100">
 
     <TextView
         android:id="@+id/tv_day"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="20"
+        android:layout_weight="19"
         android:ellipsize="end"
         android:fontFamily="@font/poppins_bold"
         android:maxLines="1"
+        android:text="Wednesday"
         android:textAlignment="textStart"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         android:textColor="#454545"
-        android:text="Wednesday" />
+        android:textSize="@dimen/_8ssp" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/sw_open"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="5"
         app:showText="false" />
 
     <TextView
@@ -37,52 +36,52 @@
         android:maxLines="1"
         android:text="Closed"
         android:textAlignment="textStart"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
         android:textColor="#454545"
+        android:textSize="@dimen/_7ssp"
         android:textStyle="bold" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/et_open_time"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="22"
+        android:layout_weight="18"
+        android:text="17:00 PM"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         android:textColor="#6c6c6c"
-        android:text="17:00 PM" />
+        android:textSize="@dimen/_8ssp" />
 
     <TextView
         android:id="@+id/tv_dash"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="5"
         android:fontFamily="@font/poppins_bold"
         android:gravity="center"
         android:text="-"
         android:textAlignment="gravity"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-        android:textColor="@color/black"
-        android:layout_weight="5"
-        />
+        android:textColor="@color/black" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/et_close_time"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="18"
+        android:text="17:00 PM"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         android:textColor="#6c6c6c"
-        android:layout_weight="22"
-        android:text="17:00 PM" />
+        android:textSize="@dimen/_8ssp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/add_hours"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="25"
         android:fontFamily="@font/poppins_bold"
+        android:paddingHorizontal="0dp"
         android:letterSpacing="0"
         android:text="Add Hours"
         android:textAllCaps="false"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
-        android:layout_weight="15" />
+        android:textSize="@dimen/_7ssp" />
 </LinearLayout>

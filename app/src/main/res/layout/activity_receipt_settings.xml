@@ -1,169 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true"
-    tools:context=".ReceiptSettings">
+    android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="?actionBarSize"
+        android:background="#e71d2c"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_menu" />
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"
-            android:background="#e71d2c"
-            app:layout_constraintTop_toTopOf="parent"
-            app:navigationIcon="@drawable/ic_menu" />
-
-        <TextView
-            android:id="@+id/tv_receipt_settings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:fontFamily="@font/poppins_bold"
-            android:text="RECEIPT SETTINGS"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
-            android:textColor="?colorPrimaryVariant"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/footer"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:context=".ReceiptSettings">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/footer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#dddddd"
-            android:padding="16dp"
-            app:layout_constraintBottom_toBottomOf="parent">
+            android:layout_height="wrap_content">
+
 
             <TextView
-                android:id="@+id/tv_apply_tooltip"
+                android:id="@+id/tv_receipt_settings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/custom_tooltip_background"
-                android:drawablePadding="8dp"
-                android:fontFamily="@font/poppins_regular"
-                android:paddingHorizontal="16dp"
-                android:paddingTop="4dp"
-                android:text="Your Changes have been successfully saved"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
-                android:textColor="#4e4e4e"
-                android:textStyle="bold"
-                app:drawableStartCompat="@drawable/ic_round_check_24"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/apply"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="RECEIPT SETTINGS"
+                android:textColor="?colorPrimaryVariant"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+
+            <include
+                android:id="@+id/regular_copy"
+                layout="@layout/view_regular_copy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_receipt_settings"
+                app:layout_constraintWidth_percent="0.15" />
+
+            <TextView
+                android:id="@+id/tv_regular_copy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Regular Copy"
+                android:textAlignment="center"
+                android:textColor="?colorPrimaryVariant"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toEndOf="@+id/regular_copy"
+                app:layout_constraintTop_toBottomOf="@id/tv_receipt_settings" />
+
+            <TextView
+                android:id="@+id/tv_regular_copy_note"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/regular_copy_note"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/tv_regular_copy"
+                app:layout_constraintTop_toBottomOf="@id/tv_regular_copy"
+                app:layout_constraintWidth_percent="0.2" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/apply"
+                android:id="@+id/regular_copy_test_print"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:fontFamily="@font/poppins_bold"
-                android:text="Apply"
-                app:backgroundTint="#00C853"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:letterSpacing="0"
+                android:text="Test Print"
+                app:backgroundTint="?colorSecondaryVariant"
+                app:layout_constraintStart_toStartOf="@id/tv_regular_copy_note"
+                app:layout_constraintTop_toBottomOf="@id/tv_regular_copy_note" />
+
+            <include
+                android:id="@+id/kitchen_copy"
+                layout="@layout/view_kitchen_copy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="40dp"
+                app:layout_constraintEnd_toStartOf="@id/tv_kitchen_copy"
+                app:layout_constraintTop_toBottomOf="@+id/tv_receipt_settings"
+                app:layout_constraintVertical_bias="0"
+                app:layout_constraintWidth_percent="0.15" />
+
+            <TextView
+                android:id="@+id/tv_kitchen_copy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Kitchen Copy"
+                android:textAlignment="center"
+                android:textColor="?colorPrimaryVariant"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toStartOf="@id/tv_kitchen_copy_note"
+                app:layout_constraintTop_toBottomOf="@id/tv_receipt_settings" />
+
+            <TextView
+                android:id="@+id/tv_kitchen_copy_note"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="80dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/kitchen_copy_note"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/tv_kitchen_copy"
+                app:layout_constraintWidth_percent="0.2" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/kitchen_copy_test_print"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins_bold"
+                android:letterSpacing="0"
+                android:text="Test Print"
+                app:backgroundTint="?colorSecondaryVariant"
+                app:layout_constraintStart_toStartOf="@id/tv_kitchen_copy_note"
+                app:layout_constraintTop_toBottomOf="@id/tv_kitchen_copy_note" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
-
-        <include
-            android:id="@+id/regular_copy"
-            layout="@layout/view_regular_copy"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            app:layout_constraintBottom_toTopOf="@id/footer"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_receipt_settings"
-            app:layout_constraintWidth_percent="0.15" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#dddddd"
+        android:padding="@dimen/_6sdp"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
-            android:id="@+id/tv_regular_copy"
+            android:id="@+id/tv_apply_tooltip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginStart="24dp"
-            android:fontFamily="@font/poppins_bold"
-            android:text="Regular Copy"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-            android:textColor="?colorPrimaryVariant"
-            app:layout_constraintStart_toEndOf="@+id/regular_copy"
-            app:layout_constraintTop_toBottomOf="@id/tv_receipt_settings" />
-
-        <TextView
-            android:id="@+id/tv_regular_copy_note"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/custom_tooltip_background"
+            android:drawablePadding="8dp"
             android:fontFamily="@font/poppins_regular"
-            android:text="@string/regular_copy_note"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="@id/tv_regular_copy"
-            app:layout_constraintTop_toBottomOf="@id/tv_regular_copy"
-            app:layout_constraintWidth_percent="0.2" />
+            android:paddingHorizontal="16dp"
+            android:paddingTop="4dp"
+            android:text="Your Changes have been successfully saved"
+            android:textColor="#4e4e4e"
+            android:textSize="@dimen/_7ssp"
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/ic_round_check_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/apply"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/regular_copy_test_print"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/poppins_bold"
-            android:text="Test Print"
-            app:backgroundTint="?colorSecondaryVariant"
-            app:layout_constraintStart_toStartOf="@id/tv_regular_copy_note"
-            app:layout_constraintTop_toBottomOf="@id/tv_regular_copy_note" />
-
-        <include
-            android:id="@+id/kitchen_copy"
-            layout="@layout/view_kitchen_copy"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="40dp"
-            app:layout_constraintBottom_toTopOf="@id/footer"
-            app:layout_constraintEnd_toStartOf="@id/tv_kitchen_copy"
-            app:layout_constraintTop_toBottomOf="@+id/tv_receipt_settings"
-            app:layout_constraintVertical_bias="0"
-            app:layout_constraintWidth_percent="0.15" />
-
-        <TextView
-            android:id="@+id/tv_kitchen_copy"
+            android:id="@+id/apply"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
-            android:text="Kitchen Copy"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-            android:textColor="?colorPrimaryVariant"
-            app:layout_constraintStart_toStartOf="@id/tv_kitchen_copy_note"
-            app:layout_constraintTop_toBottomOf="@id/tv_receipt_settings" />
-
-        <TextView
-            android:id="@+id/tv_kitchen_copy_note"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="80dp"
-            android:fontFamily="@font/poppins_regular"
-            android:text="@string/kitchen_copy_note"
-            android:textColor="@color/black"
+            android:letterSpacing="0"
+            android:text="Apply"
+            app:backgroundTint="#00C853"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_kitchen_copy"
-            app:layout_constraintWidth_percent="0.2" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/kitchen_copy_test_print"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/poppins_bold"
-            android:text="Test Print"
-            app:backgroundTint="?colorSecondaryVariant"
-            app:layout_constraintStart_toStartOf="@id/tv_kitchen_copy_note"
-            app:layout_constraintTop_toBottomOf="@id/tv_kitchen_copy_note" />
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

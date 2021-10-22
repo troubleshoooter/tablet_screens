@@ -14,7 +14,7 @@
         android:fontFamily="@font/poppins_bold"
         android:text="Restaurant Name"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:textSize="@dimen/_7ssp"
         android:textColor="#4e4e4e" />
 
     <ImageView
@@ -38,7 +38,7 @@
             android:fontFamily="@font/poppins_regular"
             android:text="Order Number : 4129"
             android:textColor="@color/black"
-            android:textSize="12sp"
+            android:textSize="@dimen/_6ssp"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -51,7 +51,7 @@
             android:includeFontPadding="false"
             android:text="29 September 2021"
             android:textColor="@color/black"
-            android:textSize="12sp"
+            android:textSize="@dimen/_6ssp"
             app:layout_constraintTop_toBottomOf="@+id/tv_order_number" />
 
         <TextView
@@ -64,7 +64,7 @@
             android:includeFontPadding="false"
             android:text="Order Time : 10:10"
             android:textColor="@color/black"
-            android:textSize="12sp"
+            android:textSize="@dimen/_6ssp"
             app:layout_constraintTop_toBottomOf="@id/tv_order_date" />
 
         <TextView
@@ -78,7 +78,7 @@
             android:includeFontPadding="false"
             android:text="Collection Time : 11.08"
             android:textColor="@color/black"
-            android:textSize="12sp"
+            android:textSize="@dimen/_6ssp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_order_time" />
 
@@ -131,7 +131,7 @@
             android:fontFamily="@font/poppins_regular"
             android:text="Option 1, Option2"
             android:textColor="@color/black"
-            android:textSize="14sp"
+            android:textSize="@dimen/_7ssp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_order_quantity" />
@@ -169,7 +169,7 @@
             android:fontFamily="@font/poppins_regular"
             android:text="Number of Items : 2"
             android:textColor="@color/black"
-            android:textSize="12sp"
+            android:textSize="@dimen/_6ssp"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
@@ -204,7 +204,7 @@
             android:fontFamily="@font/poppins_regular"
             android:text="Notes"
             android:textColor="@color/black"
-            android:textSize="12sp"
+            android:textSize="@dimen/_6ssp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

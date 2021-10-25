@@ -104,6 +104,7 @@
             android:textColor="#4e4e4e"
             android:textSize="@dimen/_7ssp"
             android:textStyle="bold"
+            android:visibility="invisible"
             app:drawableStartCompat="@drawable/ic_round_check_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/apply"

@@ -161,6 +161,7 @@
             android:text="Your Changes have been successfully saved"
             android:textColor="#4e4e4e"
             android:textSize="@dimen/_7ssp"
+            android:visibility="invisible"
             android:textStyle="bold"
             app:drawableStartCompat="@drawable/ic_round_check_24"
             app:layout_constraintBottom_toBottomOf="parent"

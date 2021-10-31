@@ -2,4 +2,5 @@
     <string name="app_name">Screens</string>
     <string name="regular_copy_note">You can click on each segment and change text sizes and styles. Once you are happy with the style please press <b>APPLY</b> at the bottom</string>
     <string name="kitchen_copy_note">This is a shorter copy for kitchen only. Copy available on Order Settings. Once you are happy with the style please press <b>APPLY</b> at the bottom</string>
+    <string name="add_new_row"><u>Add New Row</u></string>
 </resources>

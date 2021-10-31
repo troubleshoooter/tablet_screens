@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Screens">
         <activity
+            android:name=".ProductOptionActivity"
+            android:exported="false" />
+        <activity
             android:name=".ReceiptSettings"
             android:exported="false"
             android:windowSoftInputMode="stateHidden" />

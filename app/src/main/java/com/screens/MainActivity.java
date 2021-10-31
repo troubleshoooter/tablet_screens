@@ -23,5 +23,6 @@ public class MainActivity extends AppCompatActivity {
         storeTiming.setOnClickListener(v -> startActivity(new Intent(this, StoreTiming.class)));
         orderTiming.setOnClickListener(v -> startActivity(new Intent(this, OrderTiming.class)));
         receiptSettings.setOnClickListener(v -> startActivity(new Intent(this, ReceiptSettings.class)));
+        startActivity(new Intent(this, ProductOptionActivity.class));
     }
 }

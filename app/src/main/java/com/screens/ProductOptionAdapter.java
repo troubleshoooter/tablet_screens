@@ -1,5 +1,6 @@
 package com.screens;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -27,9 +28,15 @@ public class ProductOptionAdapter extends RecyclerView.Adapter<ProductOptionAdap
         return new OptionViewHolder(ListItemProductOptionBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onBindViewHolder(@NonNull OptionViewHolder holder, int position) {
-        holder.bind(options.get(position));
+        holder.optionBinding.etPrice.setText(options.get(position).getPrice());
+        holder.optionBinding.etTitle.setText(options.get(position).getLabel());
+        holder.optionBinding.ivClose.setOnClickListener(v -> {
+            options.remove(position);
+            notifyDataSetChanged();
+        });
     }
 
 
@@ -46,9 +53,5 @@ public class ProductOptionAdapter extends RecyclerView.Adapter<ProductOptionAdap
             optionBinding = itemView;
         }
 
-        public void bind(OptionsItem optionsItem) {
-            optionBinding.etPrice.setText(optionsItem.getPrice());
-            optionBinding.etTitle.setText(optionsItem.getLabel());
-        }
     }
 }

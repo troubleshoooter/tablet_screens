@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.screens.databinding.ListItemProductBinding;
+import com.screens.models.OptionsItem;
 import com.screens.models.ProductOptionItem;
 
 import java.util.List;
@@ -35,6 +36,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         holder.productBinding.etOption.setText(prods.get(position).getTitle());
         ProductOptionAdapter adapter = new ProductOptionAdapter(prods.get(position).getOptions());
         holder.productBinding.rvOptions.setAdapter(adapter);
+        holder.productBinding.btnAddNewRow.setOnClickListener(v -> {
+            prods.get(position).getOptions().add(new OptionsItem("0.00", ""));
+            notifyItemChanged(position);
+        });
     }
 
 

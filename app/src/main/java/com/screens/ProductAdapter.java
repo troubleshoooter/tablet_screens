@@ -31,7 +31,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
         holder.productBinding.ivDropdown.setOnClickListener(v -> {
             holder.productBinding.optionsContainer.setVisibility(holder.productBinding.optionsContainer.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
-            holder.productBinding.ivDropdown.setImageResource(holder.productBinding.optionsContainer.getVisibility() == View.VISIBLE ? R.drawable.ic_baseline_keyboard_arrow_down_24 : R.drawable.ic_baseline_keyboard_arrow_up_24);
+            holder.productBinding.ivDropdown.setImageResource(holder.productBinding.optionsContainer.getVisibility() == View.VISIBLE ? R.drawable.ic_baseline_keyboard_arrow_up_24 : R.drawable.ic_baseline_keyboard_arrow_down_24);
         });
         holder.productBinding.etOption.setText(prods.get(position).getTitle());
         ProductOptionAdapter adapter = new ProductOptionAdapter(prods.get(position).getOptions());

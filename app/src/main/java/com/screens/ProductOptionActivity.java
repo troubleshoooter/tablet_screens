@@ -26,7 +26,7 @@ public class ProductOptionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityProductOptionBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 5; i++) {
             List<OptionsItem> optionsItems = new ArrayList<>();
             for (int j = 0; j < 3; j++) {
                 optionsItems.add(new OptionsItem(j + ".00", "Title " + j));

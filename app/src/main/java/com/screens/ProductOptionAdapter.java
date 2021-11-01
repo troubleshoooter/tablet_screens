@@ -53,7 +53,7 @@ public class ProductOptionAdapter extends RecyclerView.Adapter<ProductOptionAdap
 
             @Override
             public void afterTextChanged(Editable s) {
-                options.get(position).setLabel(holder.optionBinding.etTitle.getText().toString());
+                options.get(holder.getAdapterPosition()).setLabel(holder.optionBinding.etTitle.getText().toString());
             }
         });
         holder.optionBinding.etPrice.addTextChangedListener(new TextWatcher() {
@@ -69,7 +69,7 @@ public class ProductOptionAdapter extends RecyclerView.Adapter<ProductOptionAdap
 
             @Override
             public void afterTextChanged(Editable s) {
-                options.get(position).setPrice(holder.optionBinding.etPrice.getText().toString());
+                options.get(holder.getAdapterPosition()).setPrice(holder.optionBinding.etPrice.getText().toString());
             }
         });
     }

@@ -1,5 +1,6 @@
 package com.screens;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +28,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         return new ProductViewHolder(ListItemProductBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
         holder.productBinding.ivDropdown.setOnClickListener(v -> {
@@ -38,7 +40,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         holder.productBinding.rvOptions.setAdapter(adapter);
         holder.productBinding.btnAddNewRow.setOnClickListener(v -> {
             prods.get(position).getOptions().add(new OptionsItem("0.00", ""));
-            notifyItemChanged(position);
+            notifyDataSetChanged();
         });
     }
 

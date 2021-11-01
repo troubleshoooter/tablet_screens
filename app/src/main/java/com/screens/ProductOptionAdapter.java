@@ -1,8 +1,11 @@
 package com.screens;
 
 import android.annotation.SuppressLint;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -36,6 +39,38 @@ public class ProductOptionAdapter extends RecyclerView.Adapter<ProductOptionAdap
         holder.optionBinding.ivClose.setOnClickListener(v -> {
             options.remove(position);
             notifyDataSetChanged();
+        });
+        holder.optionBinding.etTitle.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                options.get(position).setLabel(holder.optionBinding.etTitle.getText().toString());
+            }
+        });
+        holder.optionBinding.etPrice.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                options.get(position).setPrice(holder.optionBinding.etPrice.getText().toString());
+            }
         });
     }
 

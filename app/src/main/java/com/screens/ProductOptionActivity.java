@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -38,21 +39,27 @@ public class ProductOptionActivity extends AppCompatActivity {
     ActivityProductOptionBinding binding;
 
     private List<ProductOptionItem> productOptions = new ArrayList<>();
+    private ProductAdapter productAdapter;
+    private JSONArray response = new JSONArray();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityProductOptionBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-//        for (int i = 0; i < 5; i++) {
-//            List<OptionsItem> optionsItems = new ArrayList<>();
-//            for (int j = 0; j < 3; j++) {
-//                optionsItems.add(new OptionsItem(j + ".00", "Title " + j));
-//            }
-//            productOptions.add(new ProductOptionItem(i, optionsItems, "type", "Choose Option", "true"));
-//        }
-//        binding.rvProduct.setAdapter(new ProductAdapter(productOptions));
+
         getProducts();
+
+        binding.btnApply.setOnClickListener(v -> {
+            if (productAdapter != null) {
+                try {
+                    response = new JSONArray(productAdapter.prods.toString());
+                    Toast.makeText(this, response.toString(), Toast.LENGTH_LONG).show();
+                } catch (JSONException e) {
+                    Log.e("TAG", "onCreate: ", e);
+                }
+            }
+        });
     }
 
     public void getProducts() {
@@ -82,7 +89,9 @@ public class ProductOptionActivity extends AppCompatActivity {
                         }
                         productOptions.add(new ProductOptionItem(result.getJSONObject(i).getInt("category_id"), optionsItems, result.getJSONObject(i).getString("type"), result.getJSONObject(i).getString("title"), result.getJSONObject(i).getString("required")));
                     }
-                    binding.rvProduct.setAdapter(new ProductAdapter(productOptions));
+                    productAdapter = new ProductAdapter(productOptions);
+                    binding.rvProduct.setAdapter(productAdapter);
+                    binding.btnApply.setVisibility(View.VISIBLE);
                 } else {
                     Toast.makeText(this, object.getString("code") + " : " + object.getString("message"), Toast.LENGTH_LONG).show();
                 }

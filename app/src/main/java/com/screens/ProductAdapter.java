@@ -1,6 +1,8 @@
 package com.screens;
 
 import android.annotation.SuppressLint;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +35,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
         holder.productBinding.ivDropdown.setOnClickListener(v -> {
             holder.productBinding.optionsContainer.setVisibility(holder.productBinding.optionsContainer.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
+            holder.productBinding.tvOption.setVisibility(holder.productBinding.optionsContainer.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
+            holder.productBinding.ilOption.setVisibility(holder.productBinding.optionsContainer.getVisibility() == View.VISIBLE ? View.VISIBLE : View.GONE);
             holder.productBinding.ivDropdown.setImageResource(holder.productBinding.optionsContainer.getVisibility() == View.VISIBLE ? R.drawable.ic_baseline_keyboard_arrow_up_24 : R.drawable.ic_baseline_keyboard_arrow_down_24);
         });
         holder.productBinding.etOption.setText(prods.get(position).getTitle());
@@ -41,6 +45,23 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         holder.productBinding.btnAddNewRow.setOnClickListener(v -> {
             prods.get(position).getOptions().add(new OptionsItem("0.00", ""));
             notifyDataSetChanged();
+        });
+        holder.productBinding.etOption.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                prods.get(holder.getAdapterPosition()).setTitle(s.toString());
+                holder.productBinding.tvOption.setText(s.toString());
+            }
         });
     }
 

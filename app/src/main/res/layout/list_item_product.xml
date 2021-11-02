@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:animateLayoutChanges="true"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:animateLayoutChanges="true"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_8sdp"
+        android:animateLayoutChanges="true"
         app:cardBackgroundColor="#f3f3f3"
         app:cardCornerRadius="@dimen/_8sdp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,8 +27,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textColorHint="#c5c5c5"
-                app:hintEnabled="false"
+                android:visibility="gone"
                 app:boxBackgroundColor="@color/white"
+                app:hintEnabled="false"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintWidth_percent="0.85">
@@ -37,22 +38,36 @@
                     android:id="@+id/et_option"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:enabled="false"
                     android:fontFamily="@font/poppins_bold"
                     android:hint="Choose Option"
                     android:textSize="@dimen/_9ssp" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:id="@+id/tv_option"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:paddingVertical="@dimen/_4sdp"
+                android:text="Choose Option"
+                android:textColor="#66000000"
+                android:textSize="@dimen/_9ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.85" />
+
+
             <androidx.constraintlayout.utils.widget.ImageFilterView
                 android:id="@+id/iv_dropdown"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="@dimen/_28sdp"
                 android:layout_marginHorizontal="18dp"
                 android:padding="4dp"
                 android:scaleType="fitEnd"
-                app:layout_constraintBottom_toBottomOf="@id/il_option"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/il_option"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintWidth_percent="0.1"
                 app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24"
                 app:tint="#2a2a2a" />
